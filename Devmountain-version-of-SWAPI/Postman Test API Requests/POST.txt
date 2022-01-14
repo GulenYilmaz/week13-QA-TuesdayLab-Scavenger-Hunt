@@ -1,0 +1,17 @@
+POST
+
+Endpoint: /employees
+
+Parameters: Needs a body with a JSON object of the employee you wish to add.
+
+{
+    "id":"15000",
+    "name":"Test Person",
+    "phone":"1234567890",
+    "email":"test@devmounta.in",
+    "title":"Tester"
+}
+Description: Adds the employee listed (if the ID is not in use), returns a JSON array of all employees in the DB. If the ID is already in use, should return an error.
+
+URL--->https://peaceful-inlet-88854.herokuapp.com/api/employees
+

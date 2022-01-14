@@ -1,0 +1,28 @@
+URL Parameters
+Summary
+
+After this exercise, you may start to notice how websites use their URLs to get the right data for the page that you are on. Keep track of what you’re doing and answers to the questions in your document.
+
+Setup
+Pick one or two popular websites. For our example, we’ll use amazon.com as a site most students will have had some experience with.
+
+The site needs to have some sort of interactive nature; the ability to do a search is an easy win.
+
+Step One
+1.Interact with the page. For example, do a search.
+
+2.Copy the URLs from before and after you interact with the page – paste them in your document.
+
+3.Answer: Do you see any changes?
+
+4.Open the box below and read about the changes in an amazon.com URL after searching for an item.
+
+Original URL: https://www.amazon.com/ Search Results URL: https://www.amazon.com/s?k=wingspan&ref=nb_sb_noss_1
+
+Changes in the path are probably path parameters and/or new endpoints. If there are any ?’s - any key value pairs after that are query string parameters.
+
+/s this was added to the search URL; probably the search endpoint.
+
+?k=wingspan this is what I searched for
+
+&ref=nb_sb_noss1 The meaning of this is not immediately clear, but I can play with it if I want.

@@ -1,0 +1,274 @@
+Scavenger Hunt
+Introduction
+In this lab, you’ll be completing a few mini-exercises that have you exploring APIs and URLs.
+
+SWAPI & Marvel
+Summary
+In this section, you’ll be using SWAPI and a Marvel API to answer questions. You can use a browser or Postman to make these requests since they’ll all be GETs. Make a document/file to keep track of your answers in. Save both the URLs that you used to make the requests and the answer to the question.
+
+You’ll be using a Devmountain version of SWAPI for this lab, it’s documentation can be found here.
+
+For the Marvel API, you can look at a general info page about the API or view the full docs.
+
+In order to use the Marvel API, you’ll need the following values:
+
+key         value
+ts          123456789
+apikey      0f1b7f910cd6edd72f2342e4acc21f44
+hash        b84e2d4eed78b68e4274deebd17c03a0
+
+
+Example URLs
+https://gateway.marvel.com:443/v1/public/characters?ts=123456789&apikey=0f1b7f910cd6edd72f2342e4acc21f44&hash=b84e2d4eed78b68e4274deebd17c03a0&name=Thanos
+
+Hits the characters endpoint, looks for a characters where name=Thanos.
+
+
+https://swapi.devmountain.com/planets?terrain_like=tundra
+
+Hits the planets endpoint, and looks for matches where the terrain property contains “tundra”.
+
+
+
+
+Questions
+Star Wars
+
+What is the birth year of the 2nd person in SWAPI? (Person where ID = 2)
+
+What vehicle is listed as belonging to Qui-Gon Jinn?
+
+Who is the manufacturer of the vehicle found above?
+
+For each character in “The Empire Strikes Back” what are their people IDs?
+
+What films did “starship 21” appear in according to SWAPI?
+
+Only one windy planet is listed as having been in a film… Who is listed as its only resident?
+
+
+
+Marvel
+
+How many “pencillers” worked on Marvel Event 327?
+
+Search the Marvel API for comics whose title starts with “New” - what is the title of the last result on the resulting page?
+
+Respectively, how many events, stories, and comics did Nightcrawler appear in, according to the Marvel API? (Not including the Nightcrawler Ultimate character entry)
+
+
+URL Parameters
+Summary
+After this exercise, you may start to notice how websites use their URLs to get the right data for the page that you are on. Keep track of what you’re doing and answers to the questions in your document.
+
+Setup
+Pick one or two popular websites. For our example, we’ll use amazon.com as a site most students will have had some experience with.
+
+The site needs to have some sort of interactive nature; the ability to do a search is an easy win.
+
+Step One
+Interact with the page. For example, do a search.
+
+Copy the URLs from before and after you interact with the page – paste them in your document.
+
+Answer: Do you see any changes?
+
+Open the box below and read about the changes in an amazon.com URL after searching for an item.
+
+Step Two
+Change the parameters you’ve found – edit them or get rid of some to see what happens. Keep track of what you try in your document.
+
+For example, with Amazon, you could change ?k=wingspan to include a different search word. What happens? What else could you change in the URL to make your result different?
+
+Hint Below
+
+Step Three
+Consider the app(s) you’ve looked at and the things that you’ve changed.
+
+Answer: Could you try and break the sire with this?
+
+Answer: Are there security risks you can think of?
+
+Postman Test API Requests
+Summary
+You’ll add some requests in Postman with tests against our basic Employee Manager endpoints.
+
+Setup
+If you do not already have one, create a collection for “Employee Manager”, with the following queries:
+
+Base URL: https://peaceful-inlet-88854.herokuapp.com/api
+
+GET
+
+Endpoint: /employees
+
+Parameters: None
+
+Description: Returns a JSON array of all employees in the DB.
+
+POST
+
+Endpoint: /employees
+
+Parameters: Needs a body with a JSON object of the employee you wish to add.
+
+{
+    "id":"15000",
+    "name":"Test Person",
+    "phone":"1234567890",
+    "email":"test@devmounta.in",
+    "title":"Tester"
+}
+Description: Adds the employee listed (if the ID is not in use), returns a JSON array of all employees in the DB. If the ID is already in use, should return an error.
+
+
+
+
+
+
+
+PUT
+
+Endpoint: /employees/:employeeID
+
+Parameters:
+
+Type              Key             Value
+
+Path              employeeID      The ID number of the employee to edit.
+
+Query String      name            The employee’s current name, or desired new name.
+
+Query String      phone           The employee’s current phone number, or desired new number.
+
+Query String      email           The employee’s current email, or desired new email.
+
+Query String      title           The employee’s current title, or desired new title.
+
+Description: Edits the employee with a matching ID to have the values provided.
+
+
+
+
+
+
+DELETE
+
+Endpoint: /employees/:employeeID
+
+Parameters:
+
+Type                    Key             Value
+
+Path                   employeeID       The ID number of the employee to edit.
+
+Description: Removes the employee with a matching ID.
+
+Step One
+Open the GET.
+
+Open the “Tests” tab.
+
+Add a snippet for Status code: Code is 200
+
+Run the request, check the test results, 1/1 should pass.
+
+Great! You have a working test. If you want to verify the test, change the expected code in the test to a different response code:
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(300);
+});
+This should make the test fail – make sure you set it back to 200 once you’ve run it.
+
+Step Two
+Open the POST.
+
+Open the “Tests” tab.
+
+Add the following test: I started from the Response body: JSON value check
+
+pm.test("Your test name", function () {
+    var jsonData = pm.response.json();
+    var addedEmployee = jsonData.filter((emp) => emp.employee_id == 15000);
+    pm.expect(addedEmployee).not.to.equal(undefined);
+})
+addedEmployee is now a variable we can use that should be the newly added employee.
+
+Add more assertions looking at the other properties, verifying that the new employee has the right Name, Phone number, Email, and Title.
+
+Duplicate Records
+
+Important: This test adds a record, and will not work twice in a row as you cannot add two of the same record.
+
+You can find a few solutions, but the easiest is likely to submit a request (or use the UI) to delete the newly added employee before re-running the test.
+
+Keep in mind as well that in a shared environment your tests might clash with another tester’s - consider changing the ID to add/edit/delete a different employee from other testers.
+
+Step Three
+Add more testing!
+
+Look in more detail/with additional tests in each requests
+
+Add testing for PUT and DELETE requests
+
+Challenge
+Open the runner and run this collection of tests. Experiment with reordering and see that running tests out of order (PUT before POST for example) can cause problems.
+
+
+
+
+
+
+
+
+Generate Test Data via API Request
+Summary
+Save some data from an API request and use it as test data!
+
+Setup
+Add the following test to a new test file. You’ll need to set up the file in a folder/project that has the correct packages (look back at past materials if you’re not sure what to install in the project.)
+
+import { EmployeeManager } from "./pageObjects/EmployeeManager";
+
+const page = new EmployeeManager("chrome");
+
+// your data will go in this variable
+const employees = [];
+
+describe("checking that the UI matches the DB", () => {
+beforeEach(async () => await page.navigate());
+afterAll(async () => await page.driver.quit());
+for (let i = 0; i < employees.length; i++) {
+    test(`Looking for ${employees[i].employee_name} in the UI`, async () => {
+    await page.selectEmployee(employees[i].employee_name);
+    let employee = await page.getCurrentEmployee();
+    expect(employee.id).toEqual(employees[i].employee_id.toString());
+    expect(employee.name).toEqual(employees[i].employee_name);
+    expect(employee.phone.toString()).toEqual(employees[i].employee_phone);
+    expect(employee.email).toEqual(employees[i].employee_email);
+    expect(employee.title).toEqual(employees[i].employee_title);
+    });
+}
+});
+This test will cycle through all items in the employees array, and run a test for each.
+
+We’re expecting that all employees in that array are visible in the UI.
+
+Step 1
+Execute a query in Postman to get all the employees in the Employee Manager database (previous section).
+
+Step 2
+Copy the response; an array of employee objects. Paste it in place of the “employees” array in the test file you set up.
+
+Step 3
+Run your test. It should pass; if it doesn’t, was someone else using the database in the interim so your data is out of date?
+
+Step 4
+Consider: What benefits can come from testing like this? What are the risks? Answer these questions in your document.
+
+Challenge
+Looking at the GET in Postman, there is a “Code” link to the side…
+
+Try and copy the JS code for the request and see if you can use the return for the test!
+
+Upload your materials to GitHub.

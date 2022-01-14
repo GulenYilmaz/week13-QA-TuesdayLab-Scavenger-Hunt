@@ -1,0 +1,23 @@
+Step Two
+Open the POST.
+
+Open the “Tests” tab.
+
+Add the following test: I started from the Response body: JSON value check
+
+pm.test("Your test name", function () {
+    var jsonData = pm.response.json();
+    var addedEmployee = jsonData.filter((emp) => emp.employee_id == 15000);
+    pm.expect(addedEmployee).not.to.equal(undefined);
+})
+addedEmployee is now a variable we can use that should be the newly added employee.
+
+Add more assertions looking at the other properties, verifying that the new employee has the right Name, Phone number, Email, and Title.
+
+Duplicate Records
+
+Important: This test adds a record, and will not work twice in a row as you cannot add two of the same record.
+
+You can find a few solutions, but the easiest is likely to submit a request (or use the UI) to delete the newly added employee before re-running the test.
+
+Keep in mind as well that in a shared environment your tests might clash with another tester’s - consider changing the ID to add/edit/delete a different employee from other testers.

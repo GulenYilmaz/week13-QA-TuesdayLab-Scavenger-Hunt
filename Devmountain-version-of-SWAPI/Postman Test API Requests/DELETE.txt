@@ -1,0 +1,45 @@
+DELETE
+
+Endpoint: /employees/:employeeID
+
+Parameters:
+
+Type                    Key             Value
+
+Path                   employeeID       The ID number of the employee to edit.
+
+Description: Removes the employee with a matching ID.
+
+
+
+URL--->https://peaceful-inlet-88854.herokuapp.com/api/employees/:employeeID
+
+[
+    {
+        "employee_id": 29982393,
+        "employee_name": "Thrawn",
+        "employee_phone": "3333333333",
+        "employee_email": "gathrawn@admiralty.emp",
+        "employee_title": "Best Villain"
+    },
+    {
+        "employee_id": 29982394,
+        "employee_name": "R2-D2",
+        "employee_phone": "4444444444",
+        "employee_email": "pottymouth@astromech.rep",
+        "employee_title": "Crotchety Old Droid"
+    },
+    {
+        "employee_id": 29982250,
+        "employee_name": "Jane Smith",
+        "employee_phone": "0987654321",
+        "employee_email": "jane.smith@thehotpot.com",
+        "employee_title": "queen of Screenshots"
+    },
+    {
+        "employee_id": 13371337,
+        "employee_name": "Still A.W.jj",
+        "employee_phone": "5551231234",
+        "employee_email": "email@email.com",
+        "employee_title": "Not a QA jh"
+    },...

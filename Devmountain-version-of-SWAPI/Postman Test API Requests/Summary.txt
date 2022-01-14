@@ -1,0 +1,74 @@
+Summary
+
+You’ll add some requests in Postman with tests against our basic Employee Manager endpoints.
+
+Setup
+If you do not already have one, create a collection for “Employee Manager”, with the following queries:
+
+Base URL: https://peaceful-inlet-88854.herokuapp.com/api
+
+GET
+
+Endpoint: /employees
+
+Parameters: None
+
+Description: Returns a JSON array of all employees in the DB.
+
+POST
+
+Endpoint: /employees
+
+Parameters: Needs a body with a JSON object of the employee you wish to add.
+
+{
+    "id":"15000",
+    "name":"Test Person",
+    "phone":"1234567890",
+    "email":"test@devmounta.in",
+    "title":"Tester"
+}
+Description: Adds the employee listed (if the ID is not in use), returns a JSON array of all employees in the DB. If the ID is already in use, should return an error.
+
+
+
+
+
+
+
+PUT
+
+Endpoint: /employees/:employeeID
+
+Parameters:
+
+Type              Key             Value
+
+Path              employeeID      The ID number of the employee to edit.
+
+Query String      name            The employee’s current name, or desired new name.
+
+Query String      phone           The employee’s current phone number, or desired new number.
+
+Query String      email           The employee’s current email, or desired new email.
+
+Query String      title           The employee’s current title, or desired new title.
+
+Description: Edits the employee with a matching ID to have the values provided.
+
+
+
+
+
+
+DELETE
+
+Endpoint: /employees/:employeeID
+
+Parameters:
+
+Type                    Key             Value
+
+Path                   employeeID       The ID number of the employee to edit.
+
+Description: Removes the employee with a matching ID.

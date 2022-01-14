@@ -1,0 +1,12 @@
+Step One
+1.Open the GET.
+2.Open the “Tests” tab.
+3.Add a snippet for Status code: Code is 200
+4.Run the request, check the test results, 1/1 should pass.
+
+Great! You have a working test. If you want to verify the test, change the expected code in the test to a different response code:
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(300);
+});
+This should make the test fail – make sure you set it back to 200 once you’ve run it.

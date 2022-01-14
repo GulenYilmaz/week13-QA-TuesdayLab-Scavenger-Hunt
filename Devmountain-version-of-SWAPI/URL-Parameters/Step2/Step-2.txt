@@ -1,0 +1,8 @@
+Step Two
+Change the parameters you’ve found – edit them or get rid of some to see what happens. Keep track of what you try in your document.
+
+For example, with Amazon, you could change ?k=wingspan to include a different search word. What happens? What else could you change in the URL to make your result different?
+
+Hint Below
+
+Get rid of the /s in the URL.

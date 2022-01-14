@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Scavenger Hunt | Devmountain Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/devmountain.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/devmountain.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Devmountain Foundations</p>
+            <p id="page-title">Scavenger Hunt</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Scavenger Hunt</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#swapi-marvel">SWAPI &amp; Marvel</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#example-urls">Example URLs</a></li>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#url-parameters">URL Parameters</a><ul>
+<li><a class="reference internal" href="#id1">Summary</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#step-one">Step One</a></li>
+<li><a class="reference internal" href="#step-two">Step Two</a></li>
+<li><a class="reference internal" href="#step-three">Step Three</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#postman-test-api-requests">Postman Test API Requests</a><ul>
+<li><a class="reference internal" href="#id2">Summary</a></li>
+<li><a class="reference internal" href="#id3">Setup</a></li>
+<li><a class="reference internal" href="#id4">Step One</a></li>
+<li><a class="reference internal" href="#id5">Step Two</a></li>
+<li><a class="reference internal" href="#id6">Step Three</a></li>
+<li><a class="reference internal" href="#challenge">Challenge</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#generate-test-data-via-api-request">Generate Test Data via API Request</a><ul>
+<li><a class="reference internal" href="#id7">Summary</a></li>
+<li><a class="reference internal" href="#id8">Setup</a></li>
+<li><a class="reference internal" href="#step-1">Step 1</a></li>
+<li><a class="reference internal" href="#step-2">Step 2</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#id9">Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="scavenger-hunt">
+<h1>Scavenger Hunt</h1>
+<section class="section" id="introduction">
+<h2>Introduction</h2>
+<p>In this lab, you’ll be completing a few mini-exercises that have you exploring APIs and URLs.</p>
+</section>
+<section class="section" id="swapi-marvel">
+<h2>SWAPI &amp; Marvel</h2>
+<section class="section" id="summary">
+<h3>Summary</h3>
+<p>In this section, you’ll be using SWAPI and a Marvel API to answer questions. You can use a browser or Postman to make these requests since they’ll all be GETs. Make a document/file to keep track of your answers in. Save <strong>both</strong> the URLs that you used to make the requests and the answer to the question.</p>
+<p>You’ll be using a Devmountain version of SWAPI for this lab, it’s documentation can be found <a class="reference external" href="https://github.com/DevMountain/swapi-json-server/blob/master/API_documentation.md" target="_blank">here</a>.</p>
+<p>For the Marvel API, you can look at a <a class="reference external" href="https://developer.marvel.com/documentation/generalinfo" target="_blank">general info page</a> about the API or view the <a class="reference external" href="https://developer.marvel.com/docs" target="_blank">full docs</a>.</p>
+<p>In order to use the Marvel API, you’ll need the following values:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ts</p></td>
+<td><p>123456789</p></td>
+</tr>
+<tr class="row-odd"><td><p>apikey</p></td>
+<td><p>0f1b7f910cd6edd72f2342e4acc21f44</p></td>
+</tr>
+<tr class="row-even"><td><p>hash</p></td>
+<td><p>b84e2d4eed78b68e4274deebd17c03a0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section" id="example-urls">
+<h3>Example URLs</h3>
+<p><a class="reference external" href="https://gateway.marvel.com:443/v1/public/characters?ts=123456789&amp;apikey=0f1b7f910cd6edd72f2342e4acc21f44&amp;hash=b84e2d4eed78b68e4274deebd17c03a0&amp;name=Thanos" target="_blank">https://gateway.marvel.com:443/v1/public/characters?ts=123456789&amp;apikey=0f1b7f910cd6edd72f2342e4acc21f44&amp;hash=b84e2d4eed78b68e4274deebd17c03a0&amp;name=Thanos</a></p>
+<ul class="simple">
+<li><p>Hits the <code class="docutils literal notranslate"><span class="pre">characters</span></code> endpoint, looks for a characters where <code class="docutils literal notranslate"><span class="pre">name=Thanos</span></code>.</p></li>
+</ul>
+<p><a class="reference external" href="https://swapi.devmountain.com/planets?terrain_like=tundra" target="_blank">https://swapi.devmountain.com/planets?terrain_like=tundra</a></p>
+<ul class="simple">
+<li><p>Hits the <code class="docutils literal notranslate"><span class="pre">planets</span></code> endpoint, and looks for matches where the <code class="docutils literal notranslate"><span class="pre">terrain</span></code> property contains “tundra”.</p></li>
+</ul>
+</section>
+<section class="section" id="questions">
+<h3>Questions</h3>
+<p>Star Wars</p>
+<ol class="arabic simple">
+<li><p>What is the birth year of the 2nd person in SWAPI? (Person where ID = 2)</p></li>
+<li><p>What vehicle is listed as belonging to Qui-Gon Jinn?</p></li>
+<li><p>Who is the manufacturer of the vehicle found above?</p></li>
+<li><p>For each character in “The Empire Strikes Back” what are their people IDs?</p></li>
+<li><p>What films did “starship 21” appear in according to SWAPI?</p></li>
+<li><p>Only one windy planet is listed as having been in a film… Who is listed as its only resident?</p></li>
+</ol>
+<p>Marvel</p>
+<ol class="arabic simple">
+<li><p>How many “pencillers” worked on Marvel Event 327?</p></li>
+<li><p>Search the Marvel API for comics whose title starts with “New” - what is the title of the last result on the resulting page?</p></li>
+<li><p>Respectively, how many events, stories, and comics did Nightcrawler appear in, according to the Marvel API? (Not including the Nightcrawler Ultimate character entry)</p></li>
+</ol>
+</section>
+</section>
+<section class="section" id="url-parameters">
+<h2>URL Parameters</h2>
+<section class="section" id="id1">
+<h3>Summary</h3>
+<p>After this exercise, you may start to notice how websites use their URLs to get the right data for the page that you are on. Keep track of what you’re doing and answers to the questions in your document.</p>
+</section>
+<section class="section" id="setup">
+<h3>Setup</h3>
+<p>Pick one or two popular websites. For our example, we’ll use amazon.com as a site most students will have had some experience with.</p>
+<p>The site needs to have some sort of interactive nature; the ability to do a search is an easy win.</p>
+</section>
+<section class="section" id="step-one">
+<h3>Step One</h3>
+<ol class="arabic simple">
+<li><p>Interact with the page. For example, do a search.</p></li>
+<li><p>Copy the URLs from before and after you interact with the page – paste them in your document.</p></li>
+<li><p>Answer: Do you see any changes?</p></li>
+<li><p>Open the box below and read about the changes in an amazon.com URL after searching for an item.</p></li>
+</ol>
+<div class="togglereveal "><details class="admonition-body"><summary></summary><p>Original URL: <a class="reference external" href="https://www.amazon.com/" target="_blank">https://www.amazon.com/</a>
+Search Results URL: <a class="reference external" href="https://www.amazon.com/s?k=wingspan&amp;ref=nb_sb_noss_1" target="_blank">https://www.amazon.com/s?k=wingspan&amp;ref=nb_sb_noss_1</a></p>
+<p>Changes in the path are probably path parameters and/or new endpoints. If there are any <code class="docutils literal notranslate"><span class="pre">?</span></code>’s - any key value pairs after that are query string parameters.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/s</span></code> this was added to the search URL; probably the search endpoint.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?k=wingspan</span></code> this is what I searched for</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;ref=nb_sb_noss1</span></code> The meaning of this is not immediately clear, but I can play with it if I want.</p></li>
+</ul>
+</details></div></section>
+<section class="section" id="step-two">
+<h3>Step Two</h3>
+<ol class="arabic simple">
+<li><p>Change the parameters you’ve found – edit them or get rid of some to see what happens. Keep track of what you try in your document.</p></li>
+</ol>
+<p>For example, with Amazon, you could change <code class="docutils literal notranslate"><span class="pre">?k=wingspan</span></code> to include a different search word. What happens? What else could you change in the URL to make your result different?</p>
+<p><strong>Hint Below</strong></p>
+<div class="togglereveal "><details class="admonition-body"><summary></summary><p>Get rid of the <code class="docutils literal notranslate"><span class="pre">/s</span></code> in the URL.</p>
+</details></div></section>
+<section class="section" id="step-three">
+<h3>Step Three</h3>
+<p>Consider the app(s) you’ve looked at and the things that you’ve changed.</p>
+<ol class="arabic simple">
+<li><p>Answer: Could you try and break the sire with this?</p></li>
+<li><p>Answer: Are there security risks you can think of?</p></li>
+</ol>
+</section>
+</section>
+<section class="section" id="postman-test-api-requests">
+<h2>Postman Test API Requests</h2>
+<section class="section" id="id2">
+<h3>Summary</h3>
+<p>You’ll add some requests in Postman with tests against our basic Employee Manager endpoints.</p>
+</section>
+<section class="section" id="id3">
+<h3>Setup</h3>
+<p>If you do not already have one, create a collection for “Employee Manager”, with the following queries:</p>
+<p>Base URL: <code class="docutils literal notranslate"><span class="pre">https://peaceful-inlet-88854.herokuapp.com/api</span></code></p>
+<p><strong>GET</strong></p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/employees</span></code></p>
+<p>Parameters: None</p>
+<p>Description: Returns a JSON array of all employees in the DB.</p>
+<p><strong>POST</strong></p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/employees</span></code></p>
+<p>Parameters: Needs a body with a JSON object of the employee you wish to add.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;15000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;test@devmounta.in&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;Tester&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Description: Adds the employee listed (if the ID is not in use), returns a JSON array of all employees in the DB. If the ID is already in use, should return an error.</p>
+<p><strong>PUT</strong></p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/employees/:employeeID</span></code></p>
+<p>Parameters:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 12%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Path</p></td>
+<td><p>employeeID</p></td>
+<td><p>The ID number of the employee to edit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Query String</p></td>
+<td><p>name</p></td>
+<td><p>The employee’s current name, or desired new name.</p></td>
+</tr>
+<tr class="row-even"><td><p>Query String</p></td>
+<td><p>phone</p></td>
+<td><p>The employee’s current phone number, or desired new number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Query String</p></td>
+<td><p>email</p></td>
+<td><p>The employee’s current email, or desired new email.</p></td>
+</tr>
+<tr class="row-even"><td><p>Query String</p></td>
+<td><p>title</p></td>
+<td><p>The employee’s current title, or desired new title.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Description: Edits the employee with a matching ID to have the values provided.</p>
+<p><strong>DELETE</strong></p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/employees/:employeeID</span></code></p>
+<p>Parameters:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 12%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Path</p></td>
+<td><p>employeeID</p></td>
+<td><p>The ID number of the employee to edit.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Description: Removes the employee with a matching ID.</p>
+</section>
+<section class="section" id="id4">
+<h3>Step One</h3>
+<ol class="arabic simple">
+<li><p>Open the GET.</p></li>
+<li><p>Open the “Tests” tab.</p></li>
+<li><p>Add a snippet for <code class="docutils literal notranslate"><span class="pre">Status</span> <span class="pre">code:</span> <span class="pre">Code</span> <span class="pre">is</span> <span class="pre">200</span></code></p></li>
+<li><p>Run the request, check the test results, 1/1 should pass.</p></li>
+</ol>
+<p>Great! You have a working test. If you want to verify the test, change the expected code in the test to a different response code:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Status code is 200&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">300</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>This should make the test fail – make sure you set it back to 200 once you’ve run it.</p>
+</section>
+<section class="section" id="id5">
+<h3>Step Two</h3>
+<ol class="arabic">
+<li><p>Open the POST.</p></li>
+<li><p>Open the “Tests” tab.</p></li>
+<li><p>Add the following test: I started from the <code class="docutils literal notranslate"><span class="pre">Response</span> <span class="pre">body:</span> <span class="pre">JSON</span> <span class="pre">value</span> <span class="pre">check</span></code></p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Your test name&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">addedEmployee</span> <span class="o">=</span> <span class="nx">jsonData</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">emp</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">emp</span><span class="p">.</span><span class="nx">employee_id</span> <span class="o">==</span> <span class="mf">15000</span><span class="p">);</span>
+    <span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">addedEmployee</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addedEmployee</span></code> is now a variable we can use that should be the newly added employee.</p></li>
+<li><p>Add more assertions looking at the other properties, verifying that the new employee has the right Name, Phone number, Email, and Title.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Duplicate Records</p>
+<div class="admonition-body docutils container">
+<p>Important: This test adds a record, and will not work twice in a row as you cannot add two of the same record.</p>
+<ul class="simple">
+<li><p>You can find a few solutions, but the easiest is likely to submit a request (or use the UI) to delete the newly added employee before re-running the test.</p></li>
+<li><p>Keep in mind as well that in a shared environment your tests might clash with another tester’s - consider changing the ID to add/edit/delete a different employee from other testers.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section" id="id6">
+<h3>Step Three</h3>
+<p>Add more testing!</p>
+<ul class="simple">
+<li><p>Look in more detail/with additional tests in each requests</p></li>
+<li><p>Add testing for PUT and DELETE requests</p></li>
+</ul>
+</section>
+<section class="section" id="challenge">
+<h3>Challenge</h3>
+<p>Open the runner and run this collection of tests. Experiment with reordering and see that running tests out of order (PUT before POST for example) can cause problems.</p>
+</section>
+</section>
+<section class="section" id="generate-test-data-via-api-request">
+<h2>Generate Test Data via API Request</h2>
+<section class="section" id="id7">
+<h3>Summary</h3>
+<p>Save some data from an API request and use it as test data!</p>
+</section>
+<section class="section" id="id8">
+<h3>Setup</h3>
+<ol class="arabic simple">
+<li><p>Add the following test to a new test file. You’ll need to set up the file in a folder/project that has the correct packages (look back at past materials if you’re not sure what to install in the project.)</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">EmployeeManager</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;./pageObjects/EmployeeManager&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">EmployeeManager</span><span class="p">(</span><span class="s2">&quot;chrome&quot;</span><span class="p">);</span>
+
+<span class="c1">// your data will go in this variable</span>
+<span class="kd">const</span> <span class="nx">employees</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;checking that the UI matches the DB&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="nx">beforeEach</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">navigate</span><span class="p">());</span>
+<span class="nx">afterAll</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="nx">quit</span><span class="p">());</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">employees</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">test</span><span class="p">(</span><span class="sb">`Looking for </span><span class="si">${</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_name</span><span class="si">}</span><span class="sb"> in the UI`</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">selectEmployee</span><span class="p">(</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_name</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">getCurrentEmployee</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_id</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_name</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">phone</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_phone</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_email</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">title</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">employees</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">employee_title</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This test will cycle through all items in the employees array, and run a test for each.</p></li>
+<li><p>We’re expecting that all employees in that array are visible in the UI.</p></li>
+</ul>
+</section>
+<section class="section" id="step-1">
+<h3>Step 1</h3>
+<p>Execute a query in Postman to get all the employees in the Employee Manager database (previous section).</p>
+</section>
+<section class="section" id="step-2">
+<h3>Step 2</h3>
+<p>Copy the response; an array of employee objects. Paste it in place of the “employees” array in the test file you set up.</p>
+</section>
+<section class="section" id="step-3">
+<h3>Step 3</h3>
+<p>Run your test. It should pass; if it doesn’t, was someone else using the database in the interim so your data is out of date?</p>
+</section>
+<section class="section" id="step-4">
+<h3>Step 4</h3>
+<p>Consider: What benefits can come from testing like this? What are the risks? Answer these questions in your document.</p>
+</section>
+<section class="section" id="id9">
+<h3>Challenge</h3>
+<p>Looking at the GET in Postman, there is a “Code” link to the side…</p>
+<p>Try and copy the JS code for the request and see if you can use the return for the test!</p>
+<p><strong>Upload your materials to GitHub.</strong></p>
+</section>
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2022 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+Step Three
+Add more testing!
+
+Look in more detail/with additional tests in each requests
+
+Add testing for PUT and DELETE requests
+
+Challenge
+Open the runner and run this collection of tests. Experiment with reordering and see that running tests out of order (PUT before POST for example) can cause problems.

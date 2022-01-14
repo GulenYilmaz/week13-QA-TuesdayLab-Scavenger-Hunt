@@ -1,0 +1,50 @@
+GET
+URL--->https://peaceful-inlet-88854.herokuapp.com/api/employees
+Endpoint: /employees
+
+Parameters: None
+
+Description: Returns a JSON array of all employees in the DB.
+[
+    {
+        "employee_id": 29982392,
+        "employee_name": "Luke Skywalker",
+        "employee_phone": "2222222222",
+        "employee_email": "red5@rogue.rep",
+        "employee_title": "Jedi"
+    },
+    {
+        "employee_id": 29982393,
+        "employee_name": "Thrawn",
+        "employee_phone": "3333333333",
+        "employee_email": "gathrawn@admiralty.emp",
+        "employee_title": "Best Villain"
+    },
+    {
+        "employee_id": 29982394,
+        "employee_name": "R2-D2",
+        "employee_phone": "4444444444",
+        "employee_email": "pottymouth@astromech.rep",
+        "employee_title": "Crotchety Old Droid"
+    },
+    {
+        "employee_id": 29982250,
+        "employee_name": "Jane Smith",
+        "employee_phone": "0987654321",
+        "employee_email": "jane.smith@thehotpot.com",
+        "employee_title": "queen of Screenshots"
+    },
+    {
+        "employee_id": 13371337,
+        "employee_name": "Still A.W.jj",
+        "employee_phone": "5551231234",
+        "employee_email": "email@email.com",
+        "employee_title": "Not a QA jh"
+    },
+    {
+        "employee_id": 29982404,
+        "employee_name": "New Employeehjjhjhjh",
+        "employee_phone": "1111111111",
+        "employee_email": "abc",
+        "employee_title": "New Employeehdjj"
+    },

@@ -1,0 +1,49 @@
+Marvel
+
+1.How many “pencillers” worked on Marvel Event 327?
+
+
+URL--->http://gateway.marvel.com/v1/public/comics?ts=123456789&apikey=0f1b7f910cd6edd72f2342e4acc21f44&hash=b84e2d4eed78b68e4274deebd17c03a0&title=pencillers
+
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2022 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+    "etag": "79ef3436d0dc139b17693635b99776556e29f495",
+    "data": {
+        "offset": 0,
+        "limit": 20,
+        "total": 0,
+        "count": 0,
+        "results": []
+    }
+}
+
+2.Search the Marvel API for comics whose title starts with “New” - what is the title of the last result on the resulting page?
+URL--->http://gateway.marvel.com/v1/public/comics?ts=123456789&apikey=0f1b7f910cd6edd72f2342e4acc21f44&hash=b84e2d4eed78b68e4274deebd17c03a0&title=new
+
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2022 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+    "etag": "79ef3436d0dc139b17693635b99776556e29f495",
+    "data": {
+        "offset": 0,
+        "limit": 20,
+        "total": 0,
+        "count": 0,
+        "results": []
+    }
+}
+
+3.Respectively, how many events, stories, and comics did Nightcrawler appear in, according to the Marvel API? (Not including the Nightcrawler Ultimate character entry)
+URL--->http://gateway.marvel.com/v1/public/comics?ts=123456789&apikey=0f1b7f910cd6edd72f2342e4acc21f44&hash=b84e2d4eed78b68e4274deebd17c03a0&title=Nightcrawler 
+
+{
+    "code": "InternalError",
+    "message": "Parse Error"
+}

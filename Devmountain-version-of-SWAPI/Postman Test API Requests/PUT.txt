@@ -1,0 +1,61 @@
+PUT
+
+Endpoint: /employees/:employeeID
+
+Parameters:
+
+Type              Key             Value
+
+Path              employeeID      The ID number of the employee to edit.
+
+Query String      name            The employee’s current name, or desired new name.
+
+Query String      phone           The employee’s current phone number, or desired new number.
+
+Query String      email           The employee’s current email, or desired new email.
+
+Query String      title           The employee’s current title, or desired new title.
+
+Description: Edits the employee with a matching ID to have the values provided.
+
+
+
+
+URL--->https://peaceful-inlet-88854.herokuapp.com/api/employees/:employeeID?name=robert&phone=123456789&email=ceo@gmail.com&title=CEO
+
+[
+    {
+        "employee_id": 29982392,
+        "employee_name": "Luke Skywalker",
+        "employee_phone": "2222222222",
+        "employee_email": "red5@rogue.rep",
+        "employee_title": "Jedi"
+    },
+    {
+        "employee_id": 29982393,
+        "employee_name": "Thrawn",
+        "employee_phone": "3333333333",
+        "employee_email": "gathrawn@admiralty.emp",
+        "employee_title": "Best Villain"
+    },
+    {
+        "employee_id": 29982394,
+        "employee_name": "R2-D2",
+        "employee_phone": "4444444444",
+        "employee_email": "pottymouth@astromech.rep",
+        "employee_title": "Crotchety Old Droid"
+    },
+    {
+        "employee_id": 29982250,
+        "employee_name": "Jane Smith",
+        "employee_phone": "0987654321",
+        "employee_email": "jane.smith@thehotpot.com",
+        "employee_title": "queen of Screenshots"
+    },
+    {
+        "employee_id": 13371337,
+        "employee_name": "Still A.W.jj",
+        "employee_phone": "5551231234",
+        "employee_email": "email@email.com",
+        "employee_title": "Not a QA jh"
+    },
